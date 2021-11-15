@@ -1,5 +1,6 @@
 package com.skni.warsztatysghv2;
 
+import com.skni.warsztatysghv2.registration.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -14,7 +15,8 @@ public class WarsztatySgHv2Application {
 
     @EventListener(ApplicationReadyEvent.class)
     public void doAfterStartup() {
-        // tutaj wywolaj kod
+        Student user = studentController.createUser();
+        System.out.println(user);
     }
 
 }
